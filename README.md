@@ -9,6 +9,14 @@ attachments) to contacts.
 Detailed docs: [`backend/README.md`](backend/README.md) · [`frontend/README.md`](frontend/README.md) ·
 plan/spec: [`IMPLEMENTATION-PLAN.md`](IMPLEMENTATION-PLAN.md), [`ENGINEERING-SPEC.md`](ENGINEERING-SPEC.md).
 
+## Key decisions at a glance
+
+1. **Django + React** — Django 5 + DRF gave me ORM, migrations, and validation out of the box so the time budget went into AI logic, not plumbing. React 18 + Vite + TS offered typed contracts and a component model that maps directly to CRM UI (cards, modals, timelines).
+2. **Ollama** — Free and local, and the task (ranking ~12 accounts, a 200-word draft) is well within a local model's reach; other local LLM setups were heavier to configure. Its OpenAI-compatible endpoint also let me swap to a hosted endpoint later via env vars alone.
+3. **Only 2 AI features** — Deliberate depth-over-breadth: ranking answers "who/why/what next" and the draft turns that insight into action, closing the decide→act loop. Two features finished end-to-end (validation, failure states, undo) beats eight half-built ones.
+4. **LLM judgment + guardrails** — The LLM is the sole prioritizer (no fake scores), but Python enforces the invariants: pinned-to-top ordering, strict JSON validation, one re-prompt then a loud 502/503. Last good ranking persists, so recovery from AI outages is cheap.
+5. **Scale** — Fine for one rep to a small team (~100–300 accounts); the batch prompt (~500 tokens/account) hits context and latency walls before Postgres does. Beyond that: shard by territory, two-stage ranking, background re-ranks — no rewrite until multi-rep, multi-thousand-account scale.
+
 ## Start (full sequence)
 
 Run everything from the repo root (`orm-app/`).

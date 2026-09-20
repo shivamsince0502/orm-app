@@ -1,0 +1,10 @@
+<svg width="400" height="96" viewBox="0 0 400 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Practice by Numbers Follow-Up Queue</title>
+  <desc id="desc">Practice by Numbers logo with a medical cross and focus mark.</desc>
+  <rect x="4" y="18" width="60" height="60" rx="10" fill="#0D9488"/>
+  <path d="M34 31V65M17 48H51" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="34" cy="48" r="10" fill="#0D9488" stroke="white" stroke-width="3"/>
+  <circle cx="34" cy="48" r="3.5" fill="#A7F3D0"/>
+  <text x="82" y="48" fill="#0F172A" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="-0.5">Practice by Numbers</text>
+  <text x="84" y="70" fill="#0D9488" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2">FOLLOW-UP QUEUE</text>
+</svg>

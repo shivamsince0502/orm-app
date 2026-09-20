@@ -1,0 +1,7 @@
+Django~=5.2
+djangorestframework~=3.16
+django-cors-headers~=4.9
+psycopg[binary]~=3.2
+requests~=2.32
+pytest~=9.0
+pytest-django~=4.1

@@ -1,0 +1,22 @@
+# Secrets — NEVER commit
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+db.sqlite3
+
+# Node / frontend
+node_modules/
+dist/
+
+# OS / editor noise
+.DS_Store
+*.log
+
+# Excluded from repo per owner decision
+*.pdf
+image.jpg
+mockups/Screenshot*
